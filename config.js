@@ -7,7 +7,7 @@ let db;
 const { MongoClient } = require("mongodb")
 
 async function connectDb(){
-  connection = await MongoClient.connect("mongodb://127.0.0.1:27017");
+  connection = await MongoClient.connect(process.env.DB);
   db = connection.db("zomato_clone");
   return db;
 }
